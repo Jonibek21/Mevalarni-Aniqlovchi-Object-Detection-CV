@@ -1,5 +1,5 @@
 Markdown
-# 🍏 Fruit Object Detection using YOLOv8
+# 🫐 Fruit Object Detection using YOLOv8
 
 Ushbu loyiha kompyuter ko'rishi (Computer Vision) texnologiyalari yordamida rasmlardagi mevalarni aniqlash va ularning sonini hisoblash uchun ishlab chiqilgan. Loyihada **YOLOv8 nano** modeli maxsus ma'lumotlar to'plami ustida qayta o'qitilgan (fine-tuned).
 
@@ -54,20 +54,17 @@ Yaratilgan model yordamida ixtiyoriy rasmdagi mevalarni aniqlash kodi:
 import cv2
 import matplotlib.pyplot as plt
 from ultralytics import YOLO
-```
+
 # Model va test qilinadigan rasm yo'li
-```
 my_model = YOLO("first-model/best.pt")  # yoki second-model/best.pt
 image_path = "path/to/your/image.jpg"
-```
+
 # Bashorat qilish
-```
 results = my_model(image_path, verbose=False)
 result = results[0]
 print(f"🤖 Rasmdan jami {len(result.boxes)} ta meva topildi!")
-```
+
 # Natijani vizualizatsiya qilish
-```
 annotated_img = result.plot(labels=False, conf=False)
 annotated_img = cv2.cvtColor(annotated_img, cv2.COLOR_BGR2RGB)
 plt.figure(figsize=(10, 10))
