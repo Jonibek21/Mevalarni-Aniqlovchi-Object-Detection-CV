@@ -33,6 +33,7 @@ Repozitoriy quyidagi ierarxiya asosida tashkil etilgan:
 ├── dataset_config.yaml         # Dataset konfiguratsiyasi
 ├── args.yaml                   # Giperparametrlar sozlamasi
 └── README.md
+```
 📊 Model Natijalari (Evaluation)
 Model o'qitilish jarayoni va aniqlik ko'rsatkichlari:
 
@@ -45,33 +46,35 @@ Modelning klasslarni aniqlash bo'yicha aniqlik matritsasi:
 🚀 Ishga Tushirish (Quick Start)
 1. Kutubxonalarni o'rnatish:
 Bash
-pip install ultralytics opencv-python matplotlib torch
+```pip install ultralytics opencv-python matplotlib torch```
 2. Bitta rasmda modelni sinab ko'rish:
 Yaratilgan model yordamida ixtiyoriy rasmdagi mevalarni aniqlash kodi:
 
-Python
+```
 import cv2
 import matplotlib.pyplot as plt
 from ultralytics import YOLO
-
+```
 # Model va test qilinadigan rasm yo'li
+```
 my_model = YOLO("first-model/best.pt")  # yoki second-model/best.pt
 image_path = "path/to/your/image.jpg"
-
+```
 # Bashorat qilish
+```
 results = my_model(image_path, verbose=False)
 result = results[0]
-
 print(f"🤖 Rasmdan jami {len(result.boxes)} ta meva topildi!")
-
+```
 # Natijani vizualizatsiya qilish
+```
 annotated_img = result.plot(labels=False, conf=False)
 annotated_img = cv2.cvtColor(annotated_img, cv2.COLOR_BGR2RGB)
-
 plt.figure(figsize=(10, 10))
 plt.imshow(annotated_img)
 plt.axis('off')
 plt.show()
+```
 🎯 Kelajakdagi Rejalar
 [ ] Dataset hajmini kattalashtirish orqali aniqlikni oshirish.
 
