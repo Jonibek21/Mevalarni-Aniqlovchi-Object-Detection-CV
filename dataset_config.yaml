@@ -1,0 +1,6 @@
+names:
+- Counting-Fruits
+nc: 1
+path: /home/jony/Downloads/mevalar_dataset
+train: train/images
+val: train/images
